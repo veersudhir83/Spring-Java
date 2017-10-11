@@ -11,7 +11,10 @@ public class AppConfig {
 	
 	@Bean(name = "customerService")
 	public CustomerService getCustomerService() {
-		CustomerServiceImpl service = new CustomerServiceImpl();
+		// using Constructor injection
+		CustomerServiceImpl service = new CustomerServiceImpl(getCustomerRepository());
+		
+		// using Setter injection
 		service.setCustomerRepository(getCustomerRepository());
 		return service;
 	}
