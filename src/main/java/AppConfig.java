@@ -11,19 +11,19 @@ import io.sudheer.pluralsight.service.CustomerServiceImpl;
 @ComponentScan({"io.sudheer.pluralsight"})
 public class AppConfig {
 	
-	@Bean(name = "customerService")
+	/*@Bean(name = "customerService")
 	public CustomerService getCustomerService() {
 		// using Constructor injection
-		CustomerServiceImpl service = new CustomerServiceImpl(getCustomerRepository());
+		//CustomerServiceImpl service = new CustomerServiceImpl(getCustomerRepository());
 		
 		// using Setter injection
-		// CustomerServiceImpl service = new CustomerServiceImpl();
-		// service.setCustomerRepository(getCustomerRepository());
+		CustomerServiceImpl service = new CustomerServiceImpl();
+		service.setCustomerRepository(getCustomerRepository());
 		return service;
 	}
 
 	@Bean(name = "customerRepository")
 	public CustomerRepository getCustomerRepository() {
 		return new HibernateCustomerRepositoryImpl();
-	}
+	}*/
 }

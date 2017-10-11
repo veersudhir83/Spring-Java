@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import io.sudheer.pluralsight.model.Customer;
 
-//@Repository("customerRepository")
+@Repository("customerRepository")
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 
 	/* (non-Javadoc)
