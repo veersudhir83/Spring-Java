@@ -15,7 +15,7 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	private CustomerRepository customerRepository;
 	
-	@Autowired
+	
 	public CustomerServiceImpl(CustomerRepository customerRepository) {
 		System.out.println("CustomerService: We are using Constructor Injection");
 		this.customerRepository = customerRepository;
@@ -30,7 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerRepository.findAll();
 	}
 
-	
+	@Autowired
 	public void setCustomerRepository(CustomerRepository customerRepository) {
 		System.out.println("CustomerService: We are using Setter Injection");
 		this.customerRepository = customerRepository;
