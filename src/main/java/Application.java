@@ -1,7 +1,11 @@
+import io.sudheer.pluralsight.model.Customer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import io.sudheer.pluralsight.service.CustomerService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Application {
 
@@ -11,9 +15,11 @@ public class Application {
 		
 		CustomerService customerService = appCtx.getBean("customerService", CustomerService.class);
 		System.out.println(customerService);
-		
-		System.out.println(customerService.findAll().get(0).getFirstName() + " " + 
-				customerService.findAll().get(0).getLastName());
+
+		List<Customer> customerList = new ArrayList<Customer>(customerService.findAll());
+		customerList.forEach( customer ->
+			System.out.println(customer.getFirstName() + " " + customer.getLastName())
+		);
 	}
 
 }
